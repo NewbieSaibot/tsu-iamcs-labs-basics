@@ -7,11 +7,10 @@ gcc
 `
 
 ## Building
-`
+```
 chmod +x comp.sh
-
 ./comp.sh
-`
+```
 
 ## Task 1 - 13th problem
 
@@ -22,8 +21,6 @@ Given boolean vectors `a` and `b` of size `n`, compare them (in terms of discret
 `s` and `t` are called equal when `s_i` equals `t_i` for each `i` in `1..n`;
 `s` is less than `t` when for each `t_i` that is `1` `s_i` is either `1` or `0` (at least one `s_i` is `0`) and for each `t_i` that is `0` `s_i` is `0`;
 `s` and `t` are not incomparable when there exist such unique indices `i` and `j` where `s_i` and `t_j` are not equal.
-
-Such solution is used in `13_slow.c` and `13_bitset.c`.
 
 ### Solution 2:
 Let's set `c = a & ~b` and `d = b & ~a`.
@@ -47,27 +44,20 @@ and finally if `c` and `d` are both not equal to `0`, that means they had such u
 Given boolean matrix of size `n` by `m`, sort the columns by their weight
 
 ### Input format
-`
+```
 n m
-
 A_11A_12...A_1m
-
 A_21A_22...A_2m
-
 ... ... ... ...
-
 A_n1A_n2...A_nm
-`
+```
 ### Output format
-`
+```
 B_11B_12...B_1m
-
 B_21B_22...B_2m
-
 ... ... ... ...
-
 B_n1B_n2...B_nm
-`
+```
 where `n` and `m` are height and width of the boolean matrix in integers `1 <= n, m <= 16` (`m` can be extended up to 128 with 128 bit unsigned integer type), `A_ij` is the `ij`th element of the matrix `0 <= A_ij <= 1`
 
 
