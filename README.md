@@ -9,6 +9,7 @@ gcc
 ## Building
 `
 chmod +x comp.sh
+
 ./comp.sh
 `
 
@@ -48,16 +49,23 @@ Given boolean matrix of size `n` by `m`, sort the columns by their weight
 ### Input format
 `
 n m
+
 A_11A_12...A_1m
+
 A_21A_22...A_2m
+
 ... ... ... ...
+
 A_n1A_n2...A_nm
 `
 ### Output format
 `
 B_11B_12...B_1m
+
 B_21B_22...B_2m
+
 ... ... ... ...
+
 B_n1B_n2...B_nm
 `
 where `n` and `m` are height and width of the boolean matrix in integers `1 <= n, m <= 16` (`m` can be extended up to 128 with 128 bit unsigned integer type), `A_ij` is the `ij`th element of the matrix `0 <= A_ij <= 1`
