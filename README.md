@@ -70,6 +70,7 @@ Let's transpose the matrix, this allows us to quickly sort the rows in the trans
 ### Files:
 
 `14_slow.c` --- solution 1 with swapping each bit in columns when sorting.
+
 `14_fast.c` --- solution 2 with transposing.
 
 ## Task 3 - 24th problem
@@ -119,6 +120,7 @@ Since GNU/Linux's `grep` command uses Boyre-Moore search algorithm we can call i
 
 ### Files:
 `5_search_4.c` --- solution 1.
+
 `5_search_4_grep.c` --- solution 2.
 
 ## Task 6 --- 12th problem
@@ -152,6 +154,7 @@ Let's create `n` temporary files and put every `a[i]` element in `i`th temporary
 ### Files:
 
 `rev_original.c` --- solution 1.
+
 `rev.c` --- solution 2.
 
 ## Note
