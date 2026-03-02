@@ -9,6 +9,8 @@ int comp(ull a, ull b) {
 	ull a1_b0 = a & ~b;
 	ull b1_a0 = b & ~a;
 
+	//O(1)
+
 	if (!a1_b0 && !b1_a0) {
 		return 0;
 	} else if (!a1_b0) {
@@ -38,7 +40,6 @@ void test(ull a, ull b) {
 int main() {
 	test(0b1000, 0b1001);
 	test(0b1, 0b1);
-	test(0b0110, 0b0100);
 	test(0b0110, 0b0100);
 	test(0b1000, 0b1111);
 	test(0b0001, 0b1111);

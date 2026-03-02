@@ -8,7 +8,7 @@
 int comp(ull a, ull b) {
 	bool a_le_b = true, b_le_a = true;
 
-	for (int i = 0; i <= 63; i++) {
+	for (int i = 0; i < sizeof(a) * 8; i++) {
 		if (!(((a >> i) & 1) <= ((b >> i) & 1))) {
 			a_le_b = false;
 		}
@@ -45,7 +45,7 @@ void test(ull a, ull b) {
 
 int main() {
 	test(0b1000, 0b1001);
-	test(0b1, 0b1);
+	test(0b001, 0b1);
 	test(0b0110, 0b0100);
 	test(0b0110, 0b0100);
 	test(0b1000, 0b1111);

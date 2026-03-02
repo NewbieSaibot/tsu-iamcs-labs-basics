@@ -57,6 +57,12 @@ int main() {
 	transpose(a, b, n, m);
 
 	qsort(b, m, sizeof(ushort), cmp_pcnt);
+	
+	/*
+	for (size_t i = 0; i < m; i++) {
+		printf("%.*hb\n", n, b[i]);
+	}
+	*/
 
 	transpose(b, a, m, n);
 
