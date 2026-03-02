@@ -16,10 +16,11 @@
 5_struct
 5_sort
 5_sort_no_args
-out.*
+out*
 12_struct
 4_sort_file
 fill_rand
 tmp*
 rev
+rev_original
 *.exe
