@@ -145,7 +145,7 @@ Empty g1
 Swap g1 and g2
 Repeat until the last element of f
 ```
-The destination file is either `g1` or `g2` depending on the parity of the number of elements in `f`. This solution demonstrates how files can be used as queue data structures (sort of).
+The destination file is either `g1` or `g2` depending on the parity of the number of elements in `f`.
 Time complexity is `O(n^^2)`.
 
 ### Solution 2
