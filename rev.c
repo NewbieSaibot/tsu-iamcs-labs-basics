@@ -59,6 +59,7 @@ int main(void) {
 		fprintf(tmp, "%d", x);
 		
 		fclose(tmp);
+		free(tmp_name);
 
 		n++;
 	}
@@ -88,6 +89,7 @@ int main(void) {
 
 		// Remove temporary file
 		unlink(tmp_name);
+		free(tmp_name);
 	}
 	
 	fclose(g);
