@@ -21,6 +21,8 @@ out*
 4_sort_file
 fill_rand
 tmp*
+.tmpsortfile
+.tmpsortfile*
 rev
 rev_original
 *.exe
