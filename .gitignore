@@ -26,6 +26,7 @@ tmp*
 rev
 rev_original
 *.exe
+*.li
 6_list
 6_listi
 list_test
