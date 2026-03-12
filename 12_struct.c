@@ -35,7 +35,7 @@ void ReadStudent(Student* student) {
 											&student->group, &student->grades[0], &student->grades[1],
 											&student->grades[2], &student->grades[3]);
 
-	GradeCalc(student);
+	
 
 	//wprintf(L"%ls\n", student->last_name);
 }
@@ -83,7 +83,10 @@ int main() {
 			continue;
 		}
 
-		if (students[i].grade_cnt[3] > best.grade_cnt[3]) {
+		GradeCalc(&students[i]);
+
+		if (students[i].grade_cnt[3] >= best.grade_cnt[3] &&
+				students[i].avg >= best.avg) {
 			memcpy(&best, &students[i], sizeof(best));
 		}
 	}
