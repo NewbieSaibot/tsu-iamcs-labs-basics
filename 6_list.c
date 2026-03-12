@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
 
 		if (!strcmp("rand", token) || !strcmp("r", token)) {
 			int l, r;
-			scanf("%d%d", &l, &r);
+			fscanf(f, "%d%d", &l, &r);
 			int x = xs_rand(l, r);
 
 			ListPushTail(list, x);
