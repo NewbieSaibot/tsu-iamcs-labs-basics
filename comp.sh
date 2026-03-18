@@ -20,3 +20,5 @@ gcc 4_sort_file.c -o 4_sort_file -O2 -Wall -Wextra
 gcc list_test.c -o list_test -O2 -Wall -Wextra
 gcc 6_list.c -o 6_list -O2 -Wall -Wextra
 gcc 6_listi.c -o 6_listi -O2 -Wall -Wextra
+gcc 7_rpn.c -o 7_rpn -O2 -Wall -Wextra
+gcc 7_rpn_client.c -o 7_rpn_client -O2 -Wall -Wextra
