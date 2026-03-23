@@ -177,14 +177,23 @@ Just run it and use it to run the following commands. This is interactive enviro
 
 ### Commands:
 `rand l r` --- Add a node with random key between `l` (inclusive) and `r` (non-inclusive) to the tail.
+
 `add x` --- Function `f(x)` explained in the statement.
+
 `clear` --- Clear the list.
+
 `head x` --- Add node with key `x` to head.
+
 `tail x` --- Add node with key `x` to tail.
+
 `print` --- Print the list.
+
 `kill x` --- Remove node with key `x`.
+
 `quit` --- Quit.
+
 `flush` --- Flush the output.
+
 You can use the first character of the command instead of writing the entire word. (E.g. `a 100` instead of `add 100`).
 The constaints are `x`, `l`, `r` being 32 bit signed integers.
 
