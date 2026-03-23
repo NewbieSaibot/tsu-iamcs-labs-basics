@@ -134,6 +134,65 @@ It's fairly straightforward. Time complexity is `O(n)`.
 ### Files:
 `12_struct.c` --- solution 1.
 
+## Task 7.1 --- Reverse Polish notation
+
+### Statement:
+Given an infix expression that includes numbers, operators and round brackets, get RPN of it.
+
+### Usage (7_rpn.c)
+`./7_rpn 'expr'`, where `expr` is an expression.
+
+### Usage (7_rpn_client.c)
+`RPN> expr`, where `expr` is an expression. The program restarts the server everytime you run a command.
+
+### Types
+`+`, `-`, `*`, `/`, `^^`, ``mod``, ``or``, ``xor``, ``and``, ``shl``, ``shr`` --- binary operands.
+``not``, `-` --- unary operands.
+Variables consist of Latin characters or `_` (the first character is Latin character or `_`) and maybe digits, and numbers consist of only digits.
+`(`, `)` --- brackets.
+
+### Solution 1
+My implementation is a little bit overcomplicated. First off, we tokenize the expression, second off, we lexerize the tokens, and finally turn the nodes we got into RPN using operand and output stacks. Why is it overcomplicated? I added operands that consist of at least two characters and that are unary and many checks. It is a bit overkill for a homework. And of course I did many checks throughout the program, however there are maybe some bugs.
+
+### Files:
+`7_rpn.c` --- solution 1. RPN server, if we may call it.
+
+`7_rpn_client.c` --- solution 1. RPN client. It is recommended to use it.
+
+## Task 7.2 --- Doubly linked list
+
+### Statement:
+Make a doubly linked list (later DLL) DS that supports main functions of DLL and some function `f(x)` that pushes node with key `x` after the sequence of nodes with key `x`.
+
+### Solution 1
+No much explaination needed.
+
+### Usage (6_list)
+Create a script file called e.g. `a.li`. Include `#!/path/to/6_list` in the first line. After writing commands to the file `a.li` run `chmod +x a.li`.
+
+### Usage (6_listi)
+Just run it and use it to run the following commands. This is interactive environment.
+
+`listi> cmd`, where `cmd` is one of the following commands.
+
+### Commands:
+`rand l r` --- Add a node with random key between `l` (inclusive) and `r` (non-inclusive) to the tail.
+`add x` --- Function `f(x)` explained in the statement.
+`clear` --- Clear the list.
+`head x` --- Add node with key `x` to head.
+`tail x` --- Add node with key `x` to tail.
+`print` --- Print the list.
+`kill x` --- Remove node with key `x`.
+`quit` --- Quit.
+`flush` --- Flush the output.
+You can use the first character of the command instead of writing the entire word. (E.g. `a 100` instead of `add 100`).
+The constaints are `x`, `l`, `r` being 32 bit signed integers.
+
+### Files:
+`6_list.c` --- solution 1. You can run a file with it.
+
+`6_listi.c` --- solution 1. Interactive environment.
+
 ## Task X - Reverse a file
 
 ### Solution 1

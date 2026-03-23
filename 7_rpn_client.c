@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <strings.h>
 
 #include <readline/readline.h>
 #include <readline/history.h>
@@ -17,17 +19,29 @@ int main(void) {
 		if (strlen(expr) > 0) {
 			add_history(expr);
 
-			if (strcmp(expr, "exit") == 0) {
+			if (strcmp(expr, "quit") == 0) {
 				free(expr);
 				break;
 			}
 		}
 
-		char* input = NULL;
+		char* ex = (char*)malloc((32 + strlen(expr)) * sizeof(char));
 
-		sscanf(input, "./7_rpn %s", expr);
+		if (ex == NULL) {
+			fprintf(stderr, "Malloc fail\n");
+			free(expr);
+			continue;
+		}
 
-		system(input);
+		strcpy(ex, "./7_rpn '");
+		strcat(ex, expr);
+		strcat(ex, "'");
+
+		printf("%s\n", ex);
+
+		system(ex);
+		free(ex);
+		free(expr);
 	}
 
 	return 0;

@@ -318,8 +318,24 @@ void validate_token(Token* tok, size_t cnt) {
     for (size_t i = 0; i < cnt - 1; i++) {
 		if (tok[i].type == T_OP_BINARY && tok[i + 1].type == T_OP_BINARY) {
 			assert(0 && "Consecutive binary operands\n");
+		} else if ((tok[i].type == T_CONST && tok[i + 1].type == T_VAR) ||
+				(tok[i].type == T_VAR && tok[i + 1].type == T_CONST) ||
+				(tok[i].type == T_VAR && tok[i + 1].type == T_VAR) ||
+				(tok[i].type == T_CONST && tok[i + 1].type == T_CONST)) {
+			assert(0 && "Consecutive numbers\n");
+		} else if (i > 0
+				&& ((tok[i - 1].type != T_CONST && tok[i - 1].type != T_VAR && tok[i - 1].type != T_CLOSING)
+				&& (tok[i].type == T_OP_BINARY)
+				&& (tok[i + 1].type != T_CONST && tok[i + 1].type != T_VAR != tok[i + 1].type != T_OPENING))) {
+			assert(0 && "Binary operand must be sandwiched\n");
+		} else if (tok[i].type == T_OP_UNARY && tok[i + 1].type == T_OP_BINARY) {
+			assert(0 && "No binary operand after unary operand\n");
 		}
     }
+
+	if (tok[0].type == T_OP_BINARY) {
+		assert(0 && "Binary operand must be sandwiched\n");
+	}
 }
 
 Node* rpn_tok(Token* tok) {
@@ -427,16 +443,28 @@ void print_rpn(Node* rpn) {
 }
 
 int main(int argc, char** argv) {
-	if (argc < 1) {
+	if (argc < 2) {
 		fprintf(stderr, "No argument provided\n");
 		return 1;
 	}
 
-	char* expr = argv[1];
+	size_t alls = 0;
+	for (size_t i = 1; i < argc; i++) {
+		alls += strlen(argv[i]);
+	}
+
+	char* expr = (char*)malloc(sizeof(char) * (alls + 1));
 
 	if (expr == NULL) {
 		fprintf(stderr, "Invalid argument\n");
 		return 1;
+	}
+
+	expr[0] = '\0';
+
+	for (size_t i = 1; i < argc; i++) {
+		printf("%s\n", argv[i]);
+		strcat(expr, argv[i]);
 	}
 		
 	printf("\n========================================\n");
@@ -467,8 +495,10 @@ int main(int argc, char** argv) {
 		rpn = rpn->prev;
 		free(tmp);
 	}
+
+	free(expr);
 	
 	printf("\n");
-	
+
 	return 0;
 }
